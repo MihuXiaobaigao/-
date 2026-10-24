@@ -1,0 +1,42 @@
+{
+  "name": "biandu",
+  "version": "1.0.18",
+  "private": true,
+  "type": "module",
+  "description": "便读: local-first reading and personal knowledge system",
+  "scripts": {
+    "generate:builtin": "node tools/build-builtin-models.mjs",
+    "prestart": "npm run generate:builtin",
+    "pretest": "npm run generate:builtin",
+    "pretest:models": "npm run generate:builtin",
+    "pretest:full": "npm run generate:builtin",
+    "pretest:focus": "npm run generate:builtin",
+    "start": "node tools/serve.mjs",
+    "build:web": "node tools/build-www.mjs",
+    "android:sync": "npm run build:web && npx cap sync android",
+    "test": "node --experimental-strip-types --test tests/core.test.ts tests/prompt-grounding.test.mjs tests/pdf-layout.test.mjs tests/ocr-structure.test.mjs tests/knowledge-agent.test.mjs tests/knowledge-wiki.test.mjs tests/builtin-mcp.test.mjs tests/pdf-evidence.test.mjs tests/model-errors.test.mjs",
+    "test:e2e": "node tests/reading-e2e.mjs",
+    "test:full": "node tests/full-e2e.mjs",
+    "test:pen": "node tests/pen-e2e.mjs",
+    "test:models": "node tests/model-config-e2e.mjs",
+    "test:orientation": "node tests/orientation-e2e.mjs",
+    "test:focus": "node tests/focus-permission-e2e.mjs",
+    "test:knowledge-agent": "node tests/knowledge-agent-e2e.mjs",
+    "pretest:knowledge-agent": "npm run generate:builtin",
+    "test:wiki-ui": "node tests/knowledge-wiki-ui-e2e.mjs",
+    "test:storage": "node tests/storage-integrity-e2e.mjs",
+    "test:real-ai": "node tests/real-ai.mjs",
+    "test:visibility": "node tests/pdf-visibility-e2e.mjs",
+    "check": "node --experimental-strip-types --test tests/core.test.ts tests/prompt-grounding.test.mjs tests/pdf-layout.test.mjs tests/ocr-structure.test.mjs tests/knowledge-agent.test.mjs tests/knowledge-wiki.test.mjs tests/builtin-mcp.test.mjs tests/pdf-evidence.test.mjs tests/model-errors.test.mjs"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.5.3",
+    "@capacitor/core": "^8.5.3",
+    "pdfjs-dist": "4.10.38"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.5.3",
+    "playwright-core": "^1.55.0",
+    "sharp": "^0.35.5"
+  }
+}

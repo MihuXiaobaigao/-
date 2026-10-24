@@ -1,0 +1,32 @@
+* text=auto
+
+*.apk binary
+*.jar binary
+*.jks binary
+*.keystore binary
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.ttf binary
+*.otf binary
+*.woff binary
+*.woff2 binary
+*.pfb binary
+*.bcmap binary
+*.zip binary
+
+*.gradle text eol=lf
+*.java text eol=lf
+*.js text eol=lf
+*.mjs text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.ps1 text eol=crlf
+*.bat text eol=crlf
+*.sh text eol=lf

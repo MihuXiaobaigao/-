@@ -1,0 +1,430 @@
+/* Tablet adaptation layer: Xiaomi Pad 7S Pro + iPad Air 3 (A11 class). */
+
+:root {
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --app-height: 100dvh;
+}
+
+html {
+  height: 100%;
+  height: -webkit-fill-available;
+  overscroll-behavior: none;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  width: 100%;
+  min-height: 100%;
+  min-height: 100dvh;
+  overscroll-behavior: none;
+  touch-action: manipulation;
+}
+
+.app-shell {
+  width: 100%;
+  max-width: none;
+  height: 100vh;
+  height: var(--app-height);
+  min-height: 0;
+}
+
+.main-stage,
+.page-scroll,
+.drawer-panel,
+.modal-card {
+  min-width: 0;
+  min-height: 0;
+}
+
+.side-nav {
+  min-height: 0;
+  padding-top: max(16px, var(--safe-top));
+  padding-bottom: max(16px, var(--safe-bottom));
+  padding-left: max(12px, var(--safe-left));
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.nav-list {
+  min-height: 0;
+}
+
+.tablet-status-bar {
+  min-height: calc(34px + var(--safe-top));
+  height: auto !important;
+  padding-top: var(--safe-top);
+  padding-right: max(18px, var(--safe-right));
+  padding-left: max(18px, var(--safe-left));
+  gap: 8px 16px;
+}
+
+.status-date {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.status-clock {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.page-scroll {
+  overflow-x: hidden !important;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-gutter: stable;
+}
+
+button,
+.nav-item,
+.card-interactive,
+.bottom-nav-item {
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.input-box input,
+.input-box select,
+input[type="text"],
+input[type="search"],
+textarea,
+select {
+  font-size: 16px !important;
+}
+
+.reader-paper {
+  min-width: 0;
+}
+
+.reader-paper,
+.reader-paper p,
+.reader-paper blockquote {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+.reader-scroll,
+.drawer-panel,
+.graph-detail-panel,
+.board-context-panel {
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.drawer-panel {
+  padding-top: max(18px, var(--safe-top));
+  padding-bottom: max(18px, var(--safe-bottom));
+}
+
+.modal-backdrop {
+  padding-top: max(20px, var(--safe-top));
+  padding-right: max(20px, var(--safe-right));
+  padding-bottom: max(20px, var(--safe-bottom));
+  padding-left: max(20px, var(--safe-left));
+}
+
+.modal-card {
+  max-height: calc(var(--app-height) - var(--safe-top) - var(--safe-bottom) - 32px);
+  -webkit-overflow-scrolling: touch;
+}
+
+#graphCanvasWrap,
+#graphSvg,
+#freeformStage,
+#boardWorld,
+#boardSvgCanvas {
+  touch-action: none;
+}
+
+#graphCanvasWrap {
+  min-width: 0;
+}
+
+.graph-detail-panel {
+  flex: 0 0 auto;
+}
+
+.board-context-toggle,
+.board-context-close {
+  display: none;
+}
+
+.freeform-grid {
+  min-width: 0;
+}
+
+.board-quick-toolbar {
+  max-width: calc(100% - 92px);
+  justify-content: center;
+}
+
+.books-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  min-width: 0;
+}
+
+.books-grid > * {
+  min-width: 0;
+}
+
+.bottom-nav {
+  min-height: calc(64px + var(--safe-bottom));
+  height: auto;
+  padding-bottom: var(--safe-bottom);
+  padding-left: var(--safe-left);
+  padding-right: var(--safe-right);
+}
+
+.toast-container {
+  bottom: calc(24px + var(--safe-bottom));
+  max-width: min(620px, calc(100vw - 32px));
+}
+
+@media (max-width: 1100px) and (min-width: 861px) {
+  .side-nav {
+    width: 188px;
+    padding-left: max(10px, var(--safe-left));
+    padding-right: 10px;
+  }
+
+  .page-scroll {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .books-grid {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 1180px) {
+  .books-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 860px),
+  (orientation: portrait) and (max-width: 1200px),
+  (max-height: 700px) and (orientation: landscape) {
+  .app-shell {
+    flex-direction: column;
+  }
+
+  .side-nav {
+    display: none !important;
+  }
+
+  .bottom-nav {
+    display: flex !important;
+  }
+
+  .tablet-status-bar {
+    flex-wrap: nowrap;
+    padding-right: max(10px, var(--safe-right));
+    padding-left: max(10px, var(--safe-left));
+  }
+
+  .page-scroll {
+    padding-right: max(16px, var(--safe-right));
+    padding-left: max(16px, var(--safe-left));
+  }
+
+  .bottom-nav {
+    gap: 0;
+    overflow: hidden;
+  }
+
+  .bottom-nav-item {
+    flex: 1 1 0;
+    min-width: 0;
+    max-width: none;
+    padding-right: 2px;
+    padding-left: 2px;
+    font-size: 10.5px;
+  }
+
+  .bottom-nav-item svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .books-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .drawer-panel {
+    max-width: min(440px, 94vw);
+  }
+
+  .toast-container {
+    bottom: calc(76px + var(--safe-bottom));
+  }
+
+  .reader-paper {
+    padding: 34px 38px !important;
+  }
+
+  .graph-detail-panel {
+    width: min(340px, 42vw) !important;
+    padding: 14px !important;
+  }
+
+  .board-context-toggle,
+  .board-context-close {
+    display: inline-flex;
+  }
+
+  .board-context-panel {
+    position: absolute !important;
+    z-index: 45;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: min(360px, 92vw) !important;
+    max-width: none !important;
+    height: 100% !important;
+    box-shadow: var(--shadow-drawer);
+    transform: translateX(105%);
+    transition: transform 0.2s ease;
+  }
+
+  .board-context-panel.is-open {
+    transform: translateX(0);
+  }
+
+  .board-quick-toolbar {
+    left: 50% !important;
+    width: calc(100% - 88px) !important;
+    max-width: 760px;
+    padding: 5px 8px !important;
+    gap: 7px !important;
+  }
+
+  .board-switcher {
+    max-width: calc(100% - 88px);
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .board-switcher::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (max-width: 760px) {
+  #quickNodeCardBtn,
+  #quickExcerptAiBtn {
+    display: none;
+  }
+
+  .reader-paper {
+    padding: 28px 24px !important;
+  }
+
+  .graph-detail-panel {
+    width: 45vw !important;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 860px) and (min-width: 700px) {
+  .kb-layout {
+    grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr) !important;
+  }
+
+  .dict-layout {
+    grid-template-columns: minmax(280px, 0.92fr) minmax(0, 1.08fr) !important;
+  }
+
+  .settings-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .graph-workspace {
+    flex-direction: column;
+  }
+
+  #graphCanvasWrap {
+    min-height: 54%;
+  }
+
+  .graph-detail-panel {
+    width: 100% !important;
+    max-width: none !important;
+    height: 46% !important;
+    border-top: 1px solid var(--border-hairline);
+    border-left: 0 !important;
+  }
+}
+
+@media (max-width: 680px) {
+  .books-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (pointer: coarse) {
+  .btn {
+    min-height: 44px;
+  }
+
+  .btn-sm {
+    min-height: 40px;
+  }
+
+  .btn:hover,
+  .card-interactive:hover {
+    transform: none;
+  }
+
+  input[type="range"] {
+    height: 28px;
+    background:
+      linear-gradient(var(--border-strong), var(--border-strong))
+      center / 100% 5px no-repeat;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+@media (max-height: 620px) {
+  .tablet-status-bar {
+    display: none;
+  }
+
+  .brand-header {
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+  }
+
+  .sidebar-footer {
+    display: none;
+  }
+
+  .nav-item {
+    min-height: 42px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

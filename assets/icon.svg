@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <!-- App Icon Squircle Drop Shadow -->
+    <filter id="icon-shadow" x="-12%" y="-10%" width="124%" height="128%" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="28" stdDeviation="32" flood-color="#050A15" flood-opacity="0.45" />
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#050A15" flood-opacity="0.25" />
+    </filter>
+
+    <!-- Book Base Soft Shadow -->
+    <filter id="book-shadow" x="-15%" y="-15%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="24" stdDeviation="24" flood-color="#030712" flood-opacity="0.58" />
+    </filter>
+
+    <!-- Layered Page Depth Shadow -->
+    <filter id="page-shadow" x="-12%" y="-12%" width="124%" height="132%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#071022" flood-opacity="0.36" />
+    </filter>
+
+    <!-- Warm Sun / Reading Light Glow -->
+    <filter id="sun-glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="22" result="glow" />
+      <feMerge>
+        <feMergeNode in="glow" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Background Gradient (Midnight Ink to Deep Indigo) -->
+    <linearGradient id="bg-grad" x1="15%" y1="5%" x2="85%" y2="95%">
+      <stop offset="0%" stop-color="#182844" />
+      <stop offset="50%" stop-color="#0F1A2E" />
+      <stop offset="100%" stop-color="#080E1A" />
+    </linearGradient>
+
+    <!-- Ambient Warm Reading Glow -->
+    <radialGradient id="ambient-glow" cx="50%" cy="42%" r="48%" fx="50%" fy="38%">
+      <stop offset="0%" stop-color="#F59E0B" stop-opacity="0.34" />
+      <stop offset="48%" stop-color="#D97706" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#0F1A2E" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Squircle Inner Rim Highlight -->
+    <linearGradient id="rim-grad" x1="20%" y1="0%" x2="80%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.32" />
+      <stop offset="40%" stop-color="#94A3B8" stop-opacity="0.10" />
+      <stop offset="100%" stop-color="#F59E0B" stop-opacity="0.22" />
+    </linearGradient>
+
+    <!-- Book Hardcover Base Gradient -->
+    <linearGradient id="cover-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#334155" />
+      <stop offset="50%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+
+    <!-- Middle Page Left Gradient -->
+    <linearGradient id="mid-page-left" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE68A" />
+      <stop offset="65%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#B45309" />
+    </linearGradient>
+
+    <!-- Middle Page Right Gradient -->
+    <linearGradient id="mid-page-right" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FCD34D" />
+      <stop offset="60%" stop-color="#D97706" />
+      <stop offset="100%" stop-color="#92400E" />
+    </linearGradient>
+
+    <!-- Foreground Left Page Gradient (Warm Parchment Ivory to Soft Gold) -->
+    <linearGradient id="top-page-left" x1="8%" y1="0%" x2="96%" y2="100%">
+      <stop offset="0%" stop-color="#FFFDF9" />
+      <stop offset="42%" stop-color="#FEF3C7" />
+      <stop offset="82%" stop-color="#FCD34D" />
+      <stop offset="100%" stop-color="#F59E0B" />
+    </linearGradient>
+
+    <!-- Foreground Right Page Gradient (Soft Cream to Rich Amber for 3D Spine Contrast) -->
+    <linearGradient id="top-page-right" x1="88%" y1="5%" x2="5%" y2="95%">
+      <stop offset="0%" stop-color="#FEF9E7" />
+      <stop offset="38%" stop-color="#FDE68A" />
+      <stop offset="78%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+
+    <!-- Luminous Golden Orb Gradient -->
+    <linearGradient id="orb-grad" x1="25%" y1="10%" x2="75%" y2="90%">
+      <stop offset="0%" stop-color="#FFFDF5" />
+      <stop offset="45%" stop-color="#FDE047" />
+      <stop offset="100%" stop-color="#F59E0B" />
+    </linearGradient>
+
+    <!-- Bookmark Ribbon Gradient (Vermilion Coral) -->
+    <linearGradient id="ribbon-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FB923C" />
+      <stop offset="45%" stop-color="#EF4444" />
+      <stop offset="100%" stop-color="#B91C1C" />
+    </linearGradient>
+  </defs>
+
+  <!-- 1. App Icon Squircle Base -->
+  <g filter="url(#icon-shadow)">
+    <rect x="64" y="64" width="896" height="896" rx="208" fill="url(#bg-grad)" />
+    <rect x="64" y="64" width="896" height="896" rx="208" fill="url(#ambient-glow)" />
+    <rect x="66" y="66" width="892" height="892" rx="206" fill="none" stroke="url(#rim-grad)" stroke-width="4" />
+  </g>
+
+  <!-- 2. Minimalist Geometric Reading Horizon Halo -->
+  <g opacity="0.16" fill="none" stroke="#FCD34D" stroke-width="2" stroke-dasharray="6 12">
+    <circle cx="512" cy="396" r="224" />
+    <circle cx="512" cy="396" r="296" opacity="0.55" />
+  </g>
+
+  <!-- 3. Luminous Reading Orb (Enlightenment & Focus) -->
+  <g filter="url(#sun-glow)">
+    <circle cx="512" cy="268" r="40" fill="url(#orb-grad)" />
+    <circle cx="512" cy="268" r="39" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-opacity="0.65" />
+  </g>
+
+  <!-- 4. Central Minimalist Open Book Symbol -->
+  <g filter="url(#book-shadow)">
+    <!-- Hardcover Base Layer -->
+    <path d="M 512 710
+             C 412 668, 304 650, 208 654
+             C 194 654, 186 645, 188 632
+             L 214 378
+             C 216 365, 225 356, 238 356
+             C 334 354, 424 378, 512 432
+             C 600 378, 690 354, 786 356
+             C 799 356, 808 365, 810 378
+             L 836 632
+             C 838 645, 830 654, 816 654
+             C 720 650, 612 668, 512 710 Z"
+          fill="url(#cover-grad)"
+          stroke="#64748B"
+          stroke-width="2"
+          stroke-opacity="0.4" />
+
+    <!-- Spine Base Cradle -->
+    <path d="M 474 706 Q 512 730 550 706" fill="none" stroke="#334155" stroke-width="8" stroke-linecap="round" />
+
+    <!-- Crimson-Coral Bookmark Ribbon (Tucked Under Spine) -->
+    <path d="M 490 648
+             L 534 648
+             L 534 784
+             C 534 789, 529 791, 525 787
+             L 512 770
+             L 499 787
+             C 495 791, 490 789, 490 784 Z"
+          fill="url(#ribbon-grad)"
+          filter="url(#page-shadow)" />
+
+    <!-- Middle Fanned Pages (Left & Right with Smooth Rounded Corners) -->
+    <g filter="url(#page-shadow)">
+      <!-- Left Middle Page -->
+      <path d="M 512 692
+               C 418 640, 318 614, 232 614
+               C 221 614, 214 606, 216 595
+               L 240 358
+               C 242 347, 250 340, 261 340
+               C 346 343, 430 372, 512 430 Z"
+            fill="url(#mid-page-left)" />
+
+      <!-- Right Middle Page -->
+      <path d="M 512 692
+               C 606 640, 706 614, 792 614
+               C 803 614, 810 606, 808 595
+               L 784 358
+               C 782 347, 774 340, 763 340
+               C 678 343, 594 372, 512 430 Z"
+            fill="url(#mid-page-right)" />
+    </g>
+
+    <!-- Foreground Sweeping Open Pages (Left & Right with Smooth Rounded Corners) -->
+    <g filter="url(#page-shadow)">
+      <!-- Left Top Page -->
+      <path d="M 512 678
+               C 426 608, 336 570, 252 564
+               C 241 563, 234 555, 236 544
+               L 266 308
+               C 268 297, 276 290, 287 292
+               C 366 303, 442 346, 512 418 Z"
+            fill="url(#top-page-left)"
+            stroke="#FFFFFF"
+            stroke-width="1.5"
+            stroke-opacity="0.55" />
+
+      <!-- Right Top Page -->
+      <path d="M 512 678
+               C 598 608, 688 570, 772 564
+               C 783 563, 790 555, 788 544
+               L 758 308
+               C 756 297, 748 290, 737 292
+               C 658 303, 582 346, 512 418 Z"
+            fill="url(#top-page-right)"
+            stroke="#FEF3C7"
+            stroke-width="1.2"
+            stroke-opacity="0.4" />
+    </g>
+
+    <!-- Center Spine Crease Accent -->
+    <line x1="512" y1="418" x2="512" y2="678" stroke="#92400E" stroke-width="2" stroke-opacity="0.35" stroke-linecap="round" />
+  </g>
+</svg>

@@ -1,0 +1,13 @@
+{
+  "appId": "cn.biandu.reader",
+  "appName": "便读",
+  "webDir": "www",
+  "backgroundColor": "#F4F1EA",
+  "server": {
+    "androidScheme": "https"
+  },
+  "android": {
+    "allowMixedContent": false,
+    "webContentsDebuggingEnabled": false
+  }
+}
